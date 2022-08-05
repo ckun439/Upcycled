@@ -2,18 +2,40 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>VueJS Tutorials</title>
-        <link href="styles.css" rel="stylesheet"/>
+        <title>Up-Cycled</title>
+        <link href="scss/style.css" rel="stylesheet"/>
         <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&family=Work+Sans&display=swap" rel="stylesheet">
     </head>
     <body>
+    <div class="header">
+        <h1 class="header__title">Up-Cycled Niche Market</h1>
+        <p class="header__search">What are you looking for?</p>
+    </div>
+    <div class="container2">
         <div id="display-items">
             <ul>
                 <li v-for="item in listings">{{item}}</li>
             </ul>
         </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer__main">
+            <p class="footer__name">Niche Place</p>
+            <p class="footer__number">(400) 555-0103</p>
+            <p class="footer__mail">FinSweet@Example.com</p>
+            <p class="footer__addy">4517 Washington Ave Wellington, New Zealand</p>
+        </div>
+        <hr>
+        <div class="footer__secondary">
+            <p>copyright 2022 all rights reserved</p>
+        </div>
+    </div>
     </body>
     <script src="app.js"></script>
 
