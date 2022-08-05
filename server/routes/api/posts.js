@@ -3,7 +3,7 @@ const mongodb = require('mongodb');
 
 const router = express.Router();
 
-// GET 
+// GET API
 router.get('/', async (req, res) => {
     const post = await loadPostCollection();
     const preResult = (await post.find({}));
@@ -11,13 +11,13 @@ router.get('/', async (req, res) => {
     res.send(result);
 });
 
-// ADD 
+// ADD API
 
-// DELETE
+// DELETE API
 
-// UPDATE
+// UPDATE API
 
-// LOAD database
+// LOAD database API
 
 async function loadPostCollection() {
     const client = await mongodb.MongoClient.connect

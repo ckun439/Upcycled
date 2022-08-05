@@ -18,9 +18,15 @@
     </div>
     <div class="container2">
         <div id="display-items">
-            <ul>
-                <li v-for="item in listings">{{item}}</li>
-            </ul>
+            <div v-for="item in listings" class="container2__items">
+                <img src="img/listing-size.png" class="container2__top" alt="img1">
+                <div class="container2__bottom">
+                    <p>{{item.title}}</p>
+                    <p>{{item.price}}</p>
+                    <p>{{item.size}}</p>
+                    <p>{{item.description}}</p>
+                </div>
+            </div>
         </div>
     </div>
 

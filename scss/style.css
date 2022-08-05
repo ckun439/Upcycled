@@ -79,5 +79,20 @@
   }
 }
 .container2 {
-  padding: 100px 20px 100px 80px;
+  padding: 60px 50px 60px 50px;
+}
+.container2__items {
+  display: flex;
+  flex-direction: column;
+}
+.container2 img {
+  width: 187px;
+  height: 192px;
+}
+.container2 #display-items {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 60px;
+  align-content: center;
+  justify-content: center;
 }/*# sourceMappingURL=style.css.map */
