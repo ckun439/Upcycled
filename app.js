@@ -14,7 +14,6 @@ new Vue({
     }
   })
 
-const axios = require('axios')
 new Vue({
   el: '#insert-listing',
   data : {
