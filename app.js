@@ -13,3 +13,16 @@ new Vue({
         .catch(error => console.log(error))
     }
   })
+
+const axios = require('axios')
+new Vue({
+  el: '#insert-listing',
+  data : {
+    userID: 1,
+    title: 'dasd',
+    size: 'sad',
+    description: "akshdondsoin",
+    price: 'dsads'
+  },
+
+});

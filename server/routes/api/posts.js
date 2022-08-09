@@ -12,6 +12,17 @@ router.get('/', async (req, res) => {
 });
 
 // ADD API
+router.post('/', async (req, res) => {
+    const posts = await loadPostCollection();
+    await posts.insertOne({
+        userID: req.body.userID,
+        title: req.body.title,
+        size: req.body.size,
+        description: req.body.description,
+        price: req.body.price,
+    });
+    res.status(201).send();
+});
 
 // DELETE API
 

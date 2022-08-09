@@ -5,12 +5,21 @@ $background: linear-gradient(87.22deg, #FFB800 63.24%, #FF7A00 121.31%);
 $dark-grey: #454647;
 $light-grey: #949596;
 $black: #000;
+$orange: #FFB800;
 
+@mixin hover-state {
+  color: $black;
+  text-decoration: none;
+}
+
+/* Styling reset */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0%;
 }
+
+/* Styling header and secondary header*/
 
 .header {
   background: $background;
@@ -27,17 +36,43 @@ $black: #000;
 
   &__search {
     margin: 10px 50px 10px 30px;
-    color: $light-grey;
-    font-size: 10px;
-    background-color: $white;
+    font-size: 12px;
+    background-color: $orange;
     border-radius: 25px;
-    width: 230px;
+    width: 150px;
     height: 30px;
-    text-align: left;
-    padding: 8px 8px 8px 30px;
+    padding: 8px 10px 8px 20px;
+    a{
+      text-decoration: none;
+      color: $white;
+      text-align: left;
+      &:hover {
+        @include hover-state();
+      }
+    }
+  }
+}
+.secondary-header {
+  img {
+    width: 1920px;
+    height: 500px;
+  }
+  p::after {
+    content: "New items you'll love \a Updated daily \a";
+    white-space: pre;
+    text-transform: uppercase;
+    font-family: 'Work Sans';
+    left: 100px;
+    position: absolute;
+    color: white;
+    top: 350px;
+    font-size: 60px;
+    font-weight: bolder;
+  
   }
 }
 
+/* Styling for footer b*/
 .footer {
   padding: 40px;
   background-color: $black;
@@ -96,24 +131,63 @@ $black: #000;
   }
 }
 
+/* Styling for retrieving ALL listings from db*/
 
 .container2 {
+
+  &__title {
+    color: $orange;
+    text-transform: uppercase;
+    font-family: 'Work Sans';
+    font-size: 28px;
+    font-weight: bolder;
+    :nth-child(2) {
+      font-size: 18px;
+      text-transform: capitalize;
+    }
+    :nth-child(3) {
+      text-align: right;
+      margin: -35px 25px 0 0;
+      font-size: 18px;
+      padding: 0 0 50px 0;
+    }
+  }
   padding: 60px 50px 60px 50px;
   &__items { 
     display: flex;
     flex-direction: column;
   }
 
-  img {
-    width: 187px;
-    height: 192px;
+  &__top {
+    width: 197px;
+    height: 202px;
+  }
+
+  &__stars {
+    margin: 5px 0 0 -5px ;
+    width: 100px;
+    height: 30px;
   }
 
   #display-items {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 60px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 50px;
     align-content: center;
     justify-content: center;
   }
+
+  &__bottom {
+    line-height: 20px;
+    font-family: 'Work Sans';
+    font-size: 12.5px;
+    font-weight: 400;
+
+    :nth-child(3) {
+      color: #D40000;
+      font-weight: 800;
+      font-size: 15px;
+    }
+  }
 }
+

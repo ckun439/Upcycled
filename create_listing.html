@@ -15,32 +15,17 @@
     <div class="header">
         <h1 class="header__title">Up-Cycled</h1>
         <div class="header__search">
-            <a href="create_listing.html"><p>Create your listing</p></a>
+            <a href="index.html"><p>Explore Listings</p></a>
         </div>
-    </div>
-    <div class="secondary-header">
-        <img src="img/header-home.png" class="secondary-header__img" alt="secondary header image">
-        <p></p>
     </div>
     <div class="container2">
         <div class="container2__title">
-            <p>Hot On Up-cycled  </p>
-            <p>Thrift your favourite styles</p>
-            <p>See all</p>
-        </div>
-        <div id="display-items">
-            <div v-for="item in listings" class="container2__items">
-                <img src="img/listing-size.png" class="container2__top" alt="filler clothes images">
-                <img src="img/stars.png" class="container2__stars" alt="filler clothes images">
-                <div class="container2__bottom">
-                    <p>{{item.title}} - Size {{item.size}}</p>
-                    <p>{{item.description}}</p>
-                    <p>{{item.price}}</p>
-                </div>
+            <p>List an item</p>
+            <div id="insert-listing">
+                <p>{{createPost()}}</p>
             </div>
         </div>
     </div>
-
     <div class="footer">
         <div class="footer__main">
             <p class="footer__name">Niche Place</p>
