@@ -24,4 +24,11 @@ new Vue({
     price: 'dsads'
   },
 
+  methods: {
+    createPost: function(){
+      return axios.post('http://localhost:5000/api/posts/', {userID: this.userID, title: this.title, size: this.size, discription: this.description, price: this.price});
+    }
+  }
+
+
 });
