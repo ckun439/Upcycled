@@ -18,17 +18,16 @@ new Vue({
   el: '#insert-listing',
   data : {
     userID: 1,
-    title: 'dasd',
-    size: 'sad',
-    description: "akshdondsoin",
-    price: 'dsads'
+    title: 'My Listing',
+    size: 'Example Size',
+    description: "Example Text",
+    price: '$'
   },
 
   methods: {
     createPost: function(){
-      return axios.post('http://localhost:5000/api/posts/', {userID: this.userID, title: this.title, size: this.size, discription: this.description, price: this.price});
+      return axios.post('http://localhost:5000/api/posts/', {userID: this.userID, title: this.title, size: this.size, description: this.description, price: this.price});
     }
   }
-
 
 });

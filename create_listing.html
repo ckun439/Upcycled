@@ -18,12 +18,41 @@
             <a href="index.html"><p>Explore Listings</p></a>
         </div>
     </div>
-    <div class="container2">
-        <div class="container2__title">
+    <div class="container3">
+        <div class="container3__title">
             <p>List an item</p>
-            <div id="insert-listing">
-                <p>{{createPost()}}</p>
-            </div>
+        </div>
+        <div id="insert-listing" class="container3__form">
+            <form>
+                <div class="form__group field">
+                    <input type="input" class="form__field" v-model="title" title="title" id='title' required />
+                    <label for="title" class="form__label">Add your listing title</label>
+                </div>
+                <br>
+                <br>
+                <div class="form__group field">
+                    <input type="input" class="form__field" v-model="description" description="description" id='description' required />
+                    <label for="title" class="form__label">Add a description</label>
+                    <p>* Make this meaningful! tell us about your item. Start with a headline then add details including material, condition and style. Keep it short and accurate!</p>
+                </div>
+                <br>
+                <br>
+                <div class="form__group field">
+                    <input type="input" class="form__field--size" v-model="size" size="size" id='size' required />
+                    <label for="title" class="form__label">Size of Item</label>
+                    <p>* Please follow the format S, M, L, XL, XXL</p>
+                </div>
+                <br>
+                <br>
+                <div class="form__group field">
+                    <input type="input" class="form__field--size" v-model="price" price="price" id='price' required />
+                    <label for="title" class="form__label">Price of Item</label>
+                    <p>* Please follow the format $Amount Example: $65</p>
+                </div>
+                <br>
+                <br>
+                <button v-on:click="createPost">Submit</button>
+            </form>
         </div>
     </div>
     <div class="footer">

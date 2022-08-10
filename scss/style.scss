@@ -6,10 +6,22 @@ $dark-grey: #454647;
 $light-grey: #949596;
 $black: #000;
 $orange: #FFB800;
+$primary: #FF7A00;
+$secondary: #FFB800;
+$white: #fff;
+$gray: #9b9b9b;
 
 @mixin hover-state {
   color: $black;
   text-decoration: none;
+}
+
+@mixin title-style {
+  color: $orange;
+  text-transform: uppercase;
+  font-family: 'Work Sans';
+  font-size: 28px;
+  font-weight: bolder;
 }
 
 /* Styling reset */
@@ -136,11 +148,7 @@ $orange: #FFB800;
 .container2 {
 
   &__title {
-    color: $orange;
-    text-transform: uppercase;
-    font-family: 'Work Sans';
-    font-size: 28px;
-    font-weight: bolder;
+    @include title-style();
     :nth-child(2) {
       font-size: 18px;
       text-transform: capitalize;
@@ -189,5 +197,96 @@ $orange: #FFB800;
       font-size: 15px;
     }
   }
+}
+
+
+
+.container3 {
+  padding: 60px 0 0 50px;
+  &__title {
+    @include title-style();
+    padding: 0 0 20px 0;
+  }
+  
+  button {
+    height: 30px;
+    width: 1000px;
+    background-color: $orange;
+    border: none;
+    color: $white;
+    margin: 0 0 60px 0;
+    border-radius: 5px;
+    &:active, &:hover {
+      background-color: #FF7A00;
+    }
+  }
+  &__form {
+    label, p {
+      line-height: 20px;
+      font-family: 'Work Sans';
+      font-size: 12.5px;
+      font-weight: 400;
+      color: $black
+    }
+    &__title {
+      padding: 0 0 30px 0;
+
+    }
+  }
+}
+
+.form__group {
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+  width: 50%;
+}
+
+.form__field, .form__field--size {
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid $gray;
+  outline: 0;
+  font-size: 1rem;
+  color: $black;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+  font-family: 'Work Sans';
+
+  &--size {
+    width: 50%;
+  }
+}
+
+.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: $gray;
+}
+
+.form__field:focus, .form__field--size:focus {
+  ~ .form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: $primary;
+    font-weight:500;    
+  }
+  padding-bottom: 6px;  
+  font-weight: 500;
+  border-width: 3px;
+  border-image: linear-gradient(to right, $primary,$secondary);
+  border-image-slice: 1;
+}
+/* reset input */
+.form__field, .form__field--size{
+  &:required,&:invalid { box-shadow:none; }
 }
 
