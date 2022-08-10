@@ -158,16 +158,36 @@
   font-size: 15px;
 }
 
+/* SECOND PAGE SHOWING THE FORM */
 .container3 {
   padding: 60px 0 0 50px;
 }
 .container3__title {
+  display: flex;
+  gap: 550px;
   color: #FFB800;
   text-transform: uppercase;
   font-family: "Work Sans";
   font-size: 28px;
   font-weight: bolder;
   padding: 0 0 20px 0;
+}
+.container3 a {
+  height: 30px;
+  width: 250px;
+  font-size: 12px;
+  text-transform: capitalize;
+  background-color: #FFB800;
+  border: none;
+  color: #fff;
+  margin: 0 0 60px 0;
+  border-radius: 5px;
+  text-align: center;
+  padding: 7px 0 0 0;
+  text-decoration: none;
+}
+.container3 a:active, .container3 a:hover {
+  background-color: #FF7A00;
 }
 .container3 button {
   height: 30px;
@@ -246,4 +266,30 @@
 /* reset input */
 .form__field:required, .form__field:invalid, .form__field--size:required, .form__field--size:invalid {
   box-shadow: none;
+}
+
+/* THIRD PAGE SHOWING THE SELLING LIST */
+.listing-show {
+  margin: -70px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 30px 0;
+}
+.listing-show .container2__items {
+  display: grid;
+  grid-template-columns: 1fr 1fr 0.25fr 1fr 0.25fr 1fr;
+  gap: 20px;
+  width: 100%;
+  padding: 20px 0 20px 0;
+}
+.listing-show .container2__items .sellers-items {
+  width: 260px;
+  height: 200px;
+  padding-left: 50px;
+}
+.listing-show .container2__items:nth-child(even) {
+  background-color: #EDEDED;
+}
+.listing-show h2 {
+  padding-left: 20px;
 }/*# sourceMappingURL=style.css.map */

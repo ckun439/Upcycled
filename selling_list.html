@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Up-Cycled</title>
+        <link href="scss/style.css" rel="stylesheet"/>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&family=Work+Sans&display=swap" rel="stylesheet">
+    </head>
+    <body>
+    <div class="header">
+        <h1 class="header__title">Up-Cycled</h1>
+        <div class="header__search">
+            <a href="index.html"><p>Explore Listings</p></a>
+        </div>
+    </div>
+    <div class="container2">
+        <div class="container2__title">
+            <p>Your Selling List </p>
+            <p>View Your Listed Items</p>
+            <p>See all</p>
+        </div>
+    </div>
+    <div id="display-items">
+        <div class="listing-show">
+            <div v-for="(item, index) in listings" v-if="item.userID == 1" class="container2__items">
+                <img class= "sellers-items" src="img/listing-size.png" alt="filler image for photo">
+                <div class="container2__bottom">
+                    <p>{{item.title}} - Size {{item.size}}</p>
+                    <p>{{item.description}}</p>
+                    <p>{{item.price, add(1)}}</p>
+                </div>
+                <img src="img/Line.png" class="line" alt="line">
+                <div class="container2__bottom">
+                    <p>{{item._id}}</p>
+                </div>
+                <img src="img/Line.png" class="line" alt="line">
+                <div class="container2__bottom">
+                    <h2>Edit</h2>
+                    <p>Remove Item</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer__main">
+            <p class="footer__name">Niche Place</p>
+            <p class="footer__number">(400) 555-0103</p>
+            <p class="footer__mail">FinSweet@Example.com</p>
+            <p class="footer__addy">4517 Washington Ave Wellington, New Zealand</p>
+        </div>
+        <hr>
+        <div class="footer__secondary">
+            <p>copyright 2022 all rights reserved</p>
+        </div>
+    </div>
+    </body>
+    <script src="app.js"></script>
+
+</html>
