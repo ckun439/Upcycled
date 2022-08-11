@@ -25,6 +25,12 @@ router.post('/', async (req, res) => {
 });
 
 // DELETE API
+router.delete('/:id', async (req, res) => {
+    const post = await loadPostCollection();
+    await post.deleteOne({_id: new mongodb.ObjectId(req.params.id) });
+    res.status(200).send();
+}
+)
 
 // UPDATE API
 

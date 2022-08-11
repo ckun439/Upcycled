@@ -3,7 +3,8 @@ new Vue({
     data () {
       return {
         listings: null,
-        count: 0
+        count: 0,
+        id: "62f45cd0215769c99251a310"
       }
     },
 
@@ -18,9 +19,18 @@ new Vue({
       add: function(inc){
         console.log(this.count)
         this.count += inc;
+      },
+
+      deletePost: function(entered_id){
+        this.id = entered_id;
+        return axios.delete(`http://localhost:5000/api/posts/${this.id}`)
+        .then(response => (this.listings = response.data)),
+        location.reload();
       }
+      
     }
-  })
+    
+});
 
 new Vue({
   el: '#insert-listing',

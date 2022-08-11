@@ -32,7 +32,7 @@
                 <div class="container2__bottom">
                     <p>{{item.title}} - Size {{item.size}}</p>
                     <p>{{item.description}}</p>
-                    <p>{{item.price, add(1)}}</p>
+                    <p>{{item.price}}</p>
                 </div>
                 <img src="img/Line.png" class="line" alt="line">
                 <div class="container2__bottom">
@@ -40,8 +40,9 @@
                 </div>
                 <img src="img/Line.png" class="line" alt="line">
                 <div class="container2__bottom">
-                    <h2>Edit</h2>
-                    <p>Remove Item</p>
+                    <button><h2>Edit</h2></button>
+                    <br>
+                    <button v-on:click="deletePost(item._id)" class="removal"><p>Remove Item</p></button>
                 </div>
             </div>
         </div>
