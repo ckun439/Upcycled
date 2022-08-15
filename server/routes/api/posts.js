@@ -32,7 +32,16 @@ router.delete('/:id', async (req, res) => {
 }
 )
 
-// UPDATE API
+// UPDATE API ((FIX THIS))
+router.put("/:id", async (req, res) => {
+    const posts = await loadPostCollection();
+    let title= req.body.title;
+    let size= req.body.size; 
+    let description= req.body.description;
+    let price= req.body.price;
+    await posts.updateOne({_id: new mongodb.ObjectId(req.params._id)});
+    res.status(201).send();
+});
 
 // LOAD database API
 
