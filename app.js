@@ -4,7 +4,11 @@ new Vue({
       return {
         listings: null,
         count: 0,
-        id: "62f45cd0215769c99251a310"
+        id: "62f45cd0215769c99251a310",
+        title: "filler",
+        size: "S",
+        price: "$",
+        description: "filler",
       }
     },
 
@@ -26,6 +30,14 @@ new Vue({
         return axios.delete(`http://localhost:5000/api/posts/${this.id}`)
         .then(response => (this.listings = response.data)),
         location.reload();
+      },
+
+      updateVariables: function(title, desc, price, size) {
+        this.title = title;
+        this.size = size;
+        this.description = desc;
+        this.price = price;
+        console.log(this.title, this.price, this.description, this.size);
       }
       
     }
