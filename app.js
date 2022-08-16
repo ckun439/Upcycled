@@ -37,7 +37,10 @@ new Vue({
         this.size = size;
         this.description = desc;
         this.price = price;
-        console.log(this.title, this.price, this.description, this.size);
+      },
+
+      printVariables: function(title, desc, price, size, id) {
+        console.log(title, desc, price, size, id);
       }
       
     }

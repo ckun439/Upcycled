@@ -22,7 +22,7 @@
     <div class="container2">
         <div class="container2__title">
             <p>Your Selling List </p>
-            <p>Click, Change and apply all needed changes to your listed items</p>
+            <p>Click, Edit and Apply Changes to your listings</p>
             <p>See all</p>
         </div>
     </div>
@@ -31,11 +31,10 @@
             <div v-for="(item, index) in listings" v-if="item.userID == 1" class="container2__items">
                 <img class= "sellers-items" src="img/listing-size.png" alt="filler image for photo">
                 <div class="container2__bottom">
-                    <p>{{updateVariables(item.title, item.description, item.price, item.size, item._id)}}</p>
-                    <input type="input" class="form__field" v-model="title" title="title" id='title' required />
-                    <input type="input" class="form__field" v-model="description" title="description" id='description' required />
-                    <input type="input" class="form__field" v-model="size" title="size" id='size' required />
-                    <input type="input" class="form__field" v-model="price" title="price" id='price' required />
+                    <input type="input" class="form__field" v-model="item.title" title="title" id='title' required />
+                    <input type="input" class="form__field" v-model="item.description" title="description" id='description' required />
+                    <input type="input" class="form__field" v-model="item.size" title="size" id='size' required />
+                    <input type="input" class="form__field" v-model="item.price" title="price" id='price' required />
                 </div>
                 <img src="img/Line.png" class="line" alt="line">
                 <div class="container2__bottom">
@@ -43,7 +42,7 @@
                 </div>
                 <img src="img/Line.png" class="line" alt="line">
                 <div class="container2__bottom--last">
-                    <button><h2>Apply Changes</h2></button>
+                    <button v-on:click="printVariables(item.title, item.description, item.size, item.price, item._id)"><h2>Apply Changes</h2></button>
                     <br>
                     <button v-on:click="deletePost(item._id)" class="removal"><p>Remove Item</p></button>
                 </div>
