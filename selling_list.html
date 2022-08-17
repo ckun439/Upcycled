@@ -10,15 +10,16 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&family=Work+Sans&display=swap" rel="stylesheet">
-        
     </head>
     <body>
+    <!--Header-->
     <div class="header">
         <h1 class="header__title">Up-Cycled</h1>
         <div class="header__search">
             <a href="index.html"><p>Explore Listings</p></a>
         </div>
     </div>
+    <!--Title-->
     <div class="container2">
         <div class="container2__title">
             <p>Your Selling List </p>
@@ -26,11 +27,13 @@
             <p>See all</p>
         </div>
     </div>
+    <!--For loop that loops through all USER 1's listings and displays them-->
     <div id="display-items">
         <div class="listing-show">
             <div v-for="(item, index) in listings" v-if="item.userID == 1" class="container2__items">
                 <img class= "sellers-items" src="img/listing-size.png" alt="filler image for photo">
                 <div class="container2__bottom">
+                    <!--Input boxes to update listing information-->
                     <input type="input" class="form__field" v-model="item.title" title="title" id='title' required />
                     <input type="input" class="form__field" v-model="item.description" title="description" id='description' required />
                     <input type="input" class="form__field" v-model="item.size" title="size" id='size' required />
@@ -38,18 +41,20 @@
                 </div>
                 <img src="img/Line.png" class="line" alt="line">
                 <div class="container2__bottom">
+                    <!--Displays listing ID's-->
                     <p>{{item._id}}</p>
                 </div>
                 <img src="img/Line.png" class="line" alt="line">
                 <div class="container2__bottom--last">
-                    <button v-on:click="printVariables(item.title, item.description, item.size, item.price, item._id)"><h2>Apply Changes</h2></button>
+                    <!--Buttons to UPDATE AND DELETE listing infomation-->
+                    <button v-on:click="printVariables(item.title, item.size, item.description, item.price, item._id)"><h2>Apply Changes</h2></button>
                     <br>
                     <button v-on:click="deletePost(item._id)" class="removal"><p>Remove Item</p></button>
                 </div>
             </div>
         </div>
     </div>
-
+    <!--Footer-->
     <div class="footer">
         <div class="footer__main">
             <p class="footer__name">Niche Place</p>
@@ -63,6 +68,7 @@
         </div>
         
     </div>
+    <div id="insert-listing"></div>
     </body>
     <script src="app.js"></script>
 

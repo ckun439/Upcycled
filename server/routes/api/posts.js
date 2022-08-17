@@ -33,7 +33,7 @@ router.delete('/:id', async (req, res) => {
 )
 
 
-//Update by ID Method
+//UPDATE API
 router.patch('/:id', async (req, res) => {
     try {
         const post = await loadPostCollection();

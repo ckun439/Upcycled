@@ -12,6 +12,7 @@ new Vue({
       }
     },
 
+    /* GET request returning all listing info */
     mounted () {
       axios
         .get('http://localhost:5000/api/posts/')
@@ -20,10 +21,8 @@ new Vue({
     },
 
     methods: {
-      add: function(inc){
-        console.log(this.count)
-        this.count += inc;
-      },
+    
+      /* DELETE request that takes a listing ID and deletes based on this */    
 
       deletePost: function(entered_id){
         this.id = entered_id;
@@ -32,17 +31,13 @@ new Vue({
         location.reload();
       },
 
-      updateVariables: function(title, desc, price, size) {
-        this.title = title;
-        this.size = size;
-        this.description = desc;
-        this.price = price;
-      },
+      /* UPDATE request that talkes a listing id and updates the info based on what is edited */
 
-      printVariables: function(title, desc, price, size, id) {
-        console.log(title, desc, price, size, id);
+      printVariables: function(title, size, desc, price, id) {
+        console.log(title, size, desc, price, id);
         return axios.patch(`http://localhost:5000/api/posts/${id}`,{title: title, size: size, description: desc, price: price}),
-        console.log(this.submit)
+        console.log(this.submit),
+        location.reload();
         
       }
       
@@ -60,7 +55,8 @@ new Vue({
     price: '$',
     submit: false
   },
-
+  
+  /* POST request that creates a brand new listing */
   methods: {
     createPost: function(){
       return axios.post('http://localhost:5000/api/posts/', {userID: this.userID, title: this.title, size: this.size, description: this.description, price: this.price}),

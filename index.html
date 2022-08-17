@@ -10,24 +10,29 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&family=Work+Sans&display=swap" rel="stylesheet">
+        
     </head>
     <body>
+    <!--Main header-->
     <div class="header">
         <h1 class="header__title">Up-Cycled</h1>
         <div class="header__search">
             <a href="create_listing.html"><p>Create your listing</p></a>
         </div>
     </div>
+    <!--Secondary header-->
     <div class="secondary-header">
         <img src="img/header-home.png" class="secondary-header__img" alt="secondary header image">
         <p></p>
     </div>
+    <!--Title-->
     <div class="container2">
         <div class="container2__title">
             <p>Hot On Up-cycled  </p>
             <p>Thrift your favourite styles</p>
             <p>See all</p>
         </div>
+        <!--for loop that takes all items in db and places them into this container-->
         <div id="display-items">
             <div v-for="item in listings" class="container2__items">
                 <img src="img/listing-size.png" class="container2__top" alt="filler clothes images">
@@ -40,7 +45,7 @@
             </div>
         </div>
     </div>
-
+    <!--Footer-->
     <div class="footer">
         <div class="footer__main">
             <p class="footer__name">Niche Place</p>
@@ -53,6 +58,7 @@
             <p>copyright 2022 all rights reserved</p>
         </div>
     </div>
+    <div id="insert-listing"></div>
     </body>
     <script src="app.js"></script>
 
