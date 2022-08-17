@@ -32,17 +32,29 @@ router.delete('/:id', async (req, res) => {
 }
 )
 
-// UPDATE API ((FIX THIS))
-router.put("/:id", async (req, res) => {
-    const posts = await loadPostCollection();
-    let title= req.body.title;
-    let size= req.body.size; 
-    let description= req.body.description;
-    let price= req.body.price;
-    await posts.updateOne({_id: new mongodb.ObjectId(req.params._id)});
-    res.status(201).send();
-});
 
+//Update by ID Method
+router.patch('/:id', async (req, res) => {
+    try {
+        const post = await loadPostCollection();
+        const updatedData = req.body;
+        const options = { upsert: true };
+
+        const result = await post.updateOne(
+            {_id: new mongodb.ObjectId(req.params.id) }, { $set:{
+                title: req.body.title,
+                size: req.body.size,
+                description: req.body.description,
+                price: req.body.price,
+            }}, { upsert: true }
+        )
+
+        res.send(result)
+    }
+    catch (error) {
+        res.status(400).json({ message: error.message })
+    }
+})
 // LOAD database API
 
 async function loadPostCollection() {

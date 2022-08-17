@@ -41,6 +41,7 @@ new Vue({
 
       printVariables: function(title, desc, price, size, id) {
         console.log(title, desc, price, size, id);
+        
       }
       
     }
