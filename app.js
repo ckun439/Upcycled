@@ -41,6 +41,8 @@ new Vue({
 
       printVariables: function(title, desc, price, size, id) {
         console.log(title, desc, price, size, id);
+        return axios.patch(`http://localhost:5000/api/posts/${id}`,{title: title, size: size, description: desc, price: price}),
+        console.log(this.submit)
         
       }
       
