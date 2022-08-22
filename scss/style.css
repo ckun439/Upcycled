@@ -308,4 +308,19 @@
   color: black;
   font-weight: 100;
   padding: 5px 0 0 35px;
+}
+
+.alignment {
+  display: flex;
+  flex-direction: row;
+  gap: 100px;
+}
+.alignment button {
+  text-decoration: none;
+  border: none;
+  background-color: transparent;
+}
+.alignment button:active, .alignment button:hover {
+  color: #FF7A00;
+  font-weight: bolder;
 }/*# sourceMappingURL=style.css.map */

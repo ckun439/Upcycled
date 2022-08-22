@@ -366,3 +366,21 @@ $gray: #9b9b9b;
   }
 
 }
+
+
+.alignment {
+  display: flex;
+  flex-direction: row;
+  gap: 100px;
+  button {
+    text-decoration: none;
+    border: none;
+    background-color: transparent;
+
+    &:active, &:hover {
+      color: $primary;
+      font-weight: bolder;
+    }
+
+  }
+}
