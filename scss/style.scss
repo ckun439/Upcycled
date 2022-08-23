@@ -183,6 +183,7 @@ $gray: #9b9b9b;
     gap: 50px;
     align-content: center;
     justify-content: center;
+    position: relative;
   }
 
   &__bottom {
@@ -382,5 +383,39 @@ $gray: #9b9b9b;
       font-weight: bolder;
     }
 
+  }
+}
+
+.modal {
+  position: absolute;
+  text-align: center;
+  text-align: center;
+  @include title-style();
+  font-size: 20px;
+  color: $white;
+  top: 30%;
+  left: 50%;
+  margin-left:-200px;
+  margin-top:-50px;  
+  background-color: $dark-grey;
+  width: 400px;
+  height: 120px;
+  button {
+    margin: 10px 0 0 0;
+    font-size: 13px;
+    background-color: #FFB800;
+    border: none;
+    width: 100px;
+    height:30px;
+    color: $white;
+    &:active, &:hover {
+      background-color: #FF7A00;
+    }
+  }
+
+  input {
+    margin: 10px 0 0 0;
+    height: 50px;
+    width: 350px;
   }
 }

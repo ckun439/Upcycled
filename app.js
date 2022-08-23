@@ -1,3 +1,4 @@
+
 new Vue({
     el: '#display-items',
     data () {
@@ -9,6 +10,7 @@ new Vue({
         size: "S",
         price: "$",
         description: "filler",
+        show: false,
       }
     },
 
@@ -39,9 +41,14 @@ new Vue({
         console.log(this.submit),
         location.reload();
         
+      },
+
+
+      refresh: function() {
+        location.reload();
       }
-      
     }
+
     
 });
 

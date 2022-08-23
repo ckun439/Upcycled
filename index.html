@@ -42,9 +42,14 @@
                     <p>{{item.description}}</p>
                     <div class="alignment">
                         <p>{{item.price}}</p>
-                        <button>Add Comment</button>
+                        <button v-on:click="show = !show">Add Comment</button>
                     </div>
                 </div>
+            </div>
+            <div class="modal" v-show="show">
+                <label>Send a message to the seller</label>
+                <input type="text" size="50"></input>
+                <button v-on:click="show = !show; refresh()" >Send</button>
             </div>
         </div>
     </div>
