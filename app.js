@@ -5,11 +5,11 @@ new Vue({
       return {
         listings: null,
         count: 0,
-        id: "62f45cd0215769c99251a310",
-        title: "filler",
-        size: "S",
-        price: "$",
-        description: "filler",
+        id: '62f45cd0215769c99251a310',
+        title: 'filler',
+        size: 'S',
+        price: '$',
+        description: 'filler',
         show: false,
       }
     },
@@ -42,8 +42,6 @@ new Vue({
         location.reload();
         
       },
-
-
       refresh: function() {
         location.reload();
       }
@@ -58,7 +56,7 @@ new Vue({
     userID: 1,
     title: 'My Listing',
     size: 'Example Size',
-    description: "Example Text",
+    description: 'Example Text',
     price: '$',
     submit: false
   },
